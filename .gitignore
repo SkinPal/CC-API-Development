@@ -1,5 +1,6 @@
 config2
-config
+config/gcp_key.json
+config/firestore-key.json
 app/main2.py
 **/__pycache__/
 *.pyc
@@ -9,3 +10,4 @@ app/services/__pycache__/
 temp_images/
 database.csv
 temp_images/*
+.env

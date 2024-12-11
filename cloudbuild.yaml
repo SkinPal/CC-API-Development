@@ -1,11 +1,11 @@
 steps:
   # Build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/${PROJECT_ID}/cc-api-development', '.']
+    args: ['build', '-t', 'gcr.io/skinpal/cc-api-development', '.']
   
   # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/${PROJECT_ID}/cc-api-development']
+    args: ['push', 'gcr.io/skinpal/cc-api-development']
   
   # Deploy container image to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -15,9 +15,9 @@ steps:
       - 'deploy'
       - 'cc-api-development'
       - '--image'
-      - 'gcr.io/${PROJECT_ID}/cc-api-development'
+      - 'gcr.io/skinpal/cc-api-development'
       - '--region'
-      - 'us-central1'
+      - 'asia-southeast2'
       - '--platform'
       - 'managed'
       - '--allow-unauthenticated'
@@ -25,4 +25,4 @@ steps:
       - '/secrets/firestore-key=firestore-key:latest,/secrets/storage-key=storage-key:latest'
 
 images:
-  - 'gcr.io/${PROJECT_ID}/cc-api-development' 
+  - 'gcr.io/skinpal/cc-api-development' 
