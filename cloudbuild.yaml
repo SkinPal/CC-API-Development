@@ -1,11 +1,11 @@
 steps:
   # Build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$skinpal/$CC-API-Development', '.']
+    args: ['build', '-t', 'gcr.io/${PROJECT_ID}/cc-api-development', '.']
   
   # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$skinpal/$CC-API-Development']
+    args: ['push', 'gcr.io/${PROJECT_ID}/cc-api-development']
   
   # Deploy container image to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -13,14 +13,16 @@ steps:
     args:
       - 'run'
       - 'deploy'
-      - '$CC-API-Development'
+      - 'cc-api-development'
       - '--image'
-      - 'gcr.io/$skinpal/$CC-API-Development'
+      - 'gcr.io/${PROJECT_ID}/cc-api-development'
       - '--region'
-      - 'us-central1'  # Sesuaikan dengan region yang Anda inginkan
+      - 'us-central1'
       - '--platform'
       - 'managed'
-      - '--allow-unauthenticated'  # Hapus baris ini jika Anda tidak ingin aplikasi dapat diakses publik
+      - '--allow-unauthenticated'
+      - '--set-secrets'
+      - '/secrets/firestore-key=firestore-key:latest,/secrets/storage-key=storage-key:latest'
 
 images:
-  - 'gcr.io/$skinpal/$CC-API-Development' 
+  - 'gcr.io/${PROJECT_ID}/cc-api-development' 
