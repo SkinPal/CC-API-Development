@@ -3,6 +3,15 @@
 ## Deskripsi
 API ini dibangun menggunakan FastAPI untuk mengelola penyimpanan pengguna dan analisis kulit menggunakan Google Cloud Storage dan Firestore.
 
+
+## Team Member - CC
+
+| Bangkit ID | Name | Learning Path | University |LinkedIn |
+| ---      | ---       | ---       | ---       | ---       |
+| C312B4KY1672 | Haidar Dzaky Musyaffa  | Cloud Computing| Universitas Sebelas Maret | [![text](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/haidar-dzaky-musyaffa-6aa688269) |
+| C312B4KY1432 | Fathin Achmad Ashari| Cloud Computing | Universitas Sebelas Maret | [![text](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fathin-achmad-ashari) |
+
+
 ## Prerequisites
 Sebelum memulai, pastikan Anda memiliki:
 - **Python 3.7** atau **lebih baru**
@@ -104,3 +113,6 @@ skinpal-firestore(default)/
             ├── pekan2/
             ├── pekan3/
             └── pekan4/
+
+```
+
