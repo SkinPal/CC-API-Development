@@ -1,0 +1,26 @@
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$skinpal/$Skinpal-API-py', '.']
+  
+  # Push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$skinpal/$Skinpal-API-py']
+  
+  # Deploy container image to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - '$Skinpal-API-py'
+      - '--image'
+      - 'gcr.io/$skinpal/$Skinpal-API-py'
+      - '--region'
+      - 'us-central1'  # Sesuaikan dengan region yang Anda inginkan
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'  # Hapus baris ini jika Anda tidak ingin aplikasi dapat diakses publik
+
+images:
+  - 'gcr.io/$skinpal/$Skinpal-API-py' 

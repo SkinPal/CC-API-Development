@@ -1,0 +1,11 @@
+config2
+config
+app/main2.py
+**/__pycache__/
+*.pyc
+app/routes/__pycache__/
+app/schemas/__pycache__/
+app/services/__pycache__/
+temp_images/
+database.csv
+temp_images/*
