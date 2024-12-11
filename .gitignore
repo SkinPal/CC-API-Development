@@ -10,4 +10,5 @@ app/services/__pycache__/
 temp_images/
 database.csv
 temp_images/*
+
 .env
