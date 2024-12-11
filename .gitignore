@@ -2,7 +2,7 @@ config2
 config/gcp_key.json
 config/firestore-key.json
 app/main2.py
-**/__pycache__/
+*/__pycache__/
 *.pyc
 app/routes/__pycache__/
 app/schemas/__pycache__/
