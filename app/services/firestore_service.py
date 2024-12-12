@@ -114,9 +114,10 @@ class FirestoreService:
             if week == 'pekan4':
                 score = data.get('score')
                 if score is not None:
+                    message = self.get_progress_message(score)
                     progress_data = {
                         "percentage": score,
-                        "message": self.get_progress_message(score)
+                        "message": message
                     }
 
             # Format response
@@ -355,10 +356,10 @@ class FirestoreService:
 
     def get_progress_message(self, progress_percentage: float) -> str:
         if -5 <= progress_percentage <= 5:
-            message = "Your skin condition is stable and well-maintained! 🌟"
+            return "Your skin condition is stable and well-maintained! 🌟"
         elif 5 < progress_percentage <= 10:
-            message = "Yay! There has been an improvement in your skin condition! 🎉"
+            return "Yay! There has been an improvement in your skin condition! 🎉"
         elif progress_percentage > 10:
-            message = "Wow! Your skin has shown a significant improvement! 🌟✨"
+            return "Wow! Your skin has shown a significant improvement! 🌟✨"
         else:
-            message = "It seems your skin needs more attention. Keep it up! 💪"
+            return "It seems your skin needs more attention. Keep it up! 💪"

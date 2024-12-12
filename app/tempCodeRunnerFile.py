@@ -2,13 +2,13 @@ from fastapi import FastAPI
 from .routes.user_routes import router as user_router
 import os
 
-app = FastAPI(title="User Storage API")
+app = FastAPI(title="SkinPal API")
 
 app.include_router(user_router, prefix="/api/v1")
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to User Storage API"}
+    return {"message": "Welcome to SkinPal API"}
 
 if __name__ == "__main__":
     import uvicorn
