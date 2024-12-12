@@ -104,8 +104,8 @@ storage-bucket-01/
     ├── pekan2/
     ├── pekan3/
     └── pekan4/
-│   └── profile/
-│   └── test/
+    └── profile/
+    └── test/
 ```
 
 ## Firestore Architecture ##
@@ -145,7 +145,7 @@ skinpal-firestore(default)/
 ```
 
 ## Cloud Architecture 
-![Gambar Arsitektur Cloud](img/Cloud Architecture Skinpal.jpg)
+![Gambar Arsitektur Cloud](img/skinpal-arsitecture.drawio.png)
 
 
 
