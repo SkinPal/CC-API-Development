@@ -12,6 +12,37 @@ API ini dibangun menggunakan FastAPI untuk mengelola penyimpanan pengguna dan an
 | C312B4KY1432 | Fathin Achmad Ashari| Cloud Computing | Universitas Sebelas Maret | [![text](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fathin-achmad-ashari) |
 
 
+## Technology Stack
+
+SkinPal dibangun menggunakan teknologi-teknologi berikut:
+
+### Backend Framework & Server
+- **FastAPI** (v0.104.1): Framework Python modern untuk membangun API dengan performa tinggi
+
+> Lihat [Dokumentasi API](https://skinpal-api-backend-989761954410.asia-southeast2.run.app/docs) lengkap
+- **Uvicorn** (v0.24.0): Server ASGI yang ringan dan cepat untuk Python
+
+### Database & Storage
+- **Google Cloud Firestore** (v2.13.1): Database NoSQL untuk penyimpanan data terstruktur
+- **Google Cloud Storage** (v2.13.0): Layanan penyimpanan objek untuk gambar dan file
+- **Firebase Admin** (v6.2.0): SDK Admin untuk manajemen Firebase/Google Cloud
+
+### Machine Learning & Image Processing
+- **TensorFlow** (≥2.13.0): Framework machine learning untuk analisis kulit
+- **NumPy** (≥1.24.3): Library untuk komputasi numerik
+- **Pillow** (≥10.0.0): Library pengolahan gambar Python
+- **Pandas** (≥1.5.0): Library analisis data untuk Python
+
+### Keamanan & Autentikasi
+- **Python-Jose** (v3.3.0): Implementasi JWT (JSON Web Tokens) untuk Python
+- **Bcrypt** (v3.2.0): Library untuk hashing password
+- **Pydantic** (v2.4.2): Data validation menggunakan Python type annotations
+
+### Utilitas
+- **Python-Multipart** (v0.0.6): Parser untuk form-data/multipart
+- **OpenPyxl** (v3.1.2): Library untuk membaca/menulis file Excel
+- **Python-Dotenv** (v0.19.0): Manajemen environment variables
+
 ## Prerequisites
 Sebelum memulai, pastikan Anda memiliki:
 - **Python 3.7** atau **lebih baru**
@@ -21,7 +52,7 @@ Sebelum memulai, pastikan Anda memiliki:
 
 1. **Clone Repositori**
    ```bash
-   git clone https://github.com/daffaverse/Skinpal-API-py.git <repo-name>
+   git clone https://github.com/SkinPal/CC-API-Development.git
    ```
 1. **Check Version Python ( harus > 3.7) dan Pip**
    ```bash
@@ -34,7 +65,7 @@ Sebelum memulai, pastikan Anda memiliki:
    ```bash
    pip install -r requirements.txt
    ```
-4. **Run Program**
+4. **Run Program Lokal**
    ```bash
    uvicorn app.main:app --host localhost --reload
    ```
@@ -45,13 +76,6 @@ Sebelum memulai, pastikan Anda memiliki:
 - Untuk mengupload gambar, gunakan endpoint `/api/v1/users/upload`.
 - Untuk menghapus gambar, gunakan endpoint `/api/v1/users/delete-image`.
 - Untuk mendapatkan data analisis kulit, gunakan endpoint `/api/v1/users/analysis`.
-
-## Kontribusi
-Jika Anda ingin berkontribusi, silakan buat pull request atau buka issue.
-
-## Lisensi
-[MIT License](LICENSE)
-
 
 user register :
 =======
@@ -73,11 +97,15 @@ storage-bucket-01/
 │   ├── pekan2/
 │   ├── pekan3/
 │   └── pekan4/
+│   └── profile/
+│   └── test/
 └── [user2_id]/
     ├── pekan1/
     ├── pekan2/
     ├── pekan3/
     └── pekan4/
+│   └── profile/
+│   └── test/
 ```
 
 ## Firestore Architecture ##
@@ -87,6 +115,8 @@ skinpal-firestore(default)/
     ├── [user1_id]/
     │   ├── nama: "Ahmad Cristian"
     │   ├── email: "ahmadcristian@email.com"
+    │   ├── password: (hashed)
+    │   ├── profile_url: null
     │   ├── createdAt: timestamp
     │   └── image/
     │       ├── pekan0/
@@ -94,8 +124,6 @@ skinpal-firestore(default)/
     │       │   ├── acne: null
     │       │   ├── redness: null
     │       │   ├── eyebags: null
-    │       │   ├── wrinkles: null
-    │       │   ├── darkspot: null
     │       │   ├── score: null
     │       │   ├── createdAt: null
     │       │   ├── public_url: null
@@ -115,4 +143,9 @@ skinpal-firestore(default)/
             └── pekan4/
 
 ```
+
+## Cloud Architecture 
+![Gambar Arsitektur Cloud](img/Cloud Architecture Skinpal.jpg)
+
+
 

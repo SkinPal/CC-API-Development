@@ -1,0 +1,1242 @@
+{
+	"info": {
+		"_postman_id": "47c02fc0-57c5-44cb-aef2-da5d831d711c",
+		"name": "Capstone - MD x CC",
+		"description": "SkinPal company",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39631710",
+		"_collection_link": "https://skinpal-team.postman.co/workspace/SkinPal-Team-Workspace~0d889823-9d2d-4fbe-8d49-7fd371f0bee6/collection/39631710-47c02fc0-57c5-44cb-aef2-da5d831d711c?action=share&source=collection_link&creator=39631710"
+	},
+	"item": [
+		{
+			"name": "FINAL API (server)",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"achapon\",\r\n    \"nama\": \"ponacha\",\r\n    \"email\": \"fathinacha@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://skinpal-api-989761954410.asia-southeast2.run.app/api/v1/users/",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n       \"user_id\": \"achapon\",\r\n       \"password\": \"12345678\"\r\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://skinpal-api-989761954410.asia-southeast2.run.app/api/v1/users/login",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "analyze",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWNoYXBvbiIsImV4cCI6MTczMzkzMTg4OX0.842Ar0GKK5xmSfIktDV14rYoUKzOjLvCFD1j6eo3qiY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiaGFpZGFyamFraWVtIiwiZXhwIjoxNzMzMzg0MjAzfQ.ZqDltzZIfcOfMaGpRTtcXp04iVsrHju4i_PYUjYXjVc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/lenov/Downloads/WhatsApp Image 2024-12-04 at 10.42.53.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://skinpal-api-989761954410.asia-southeast2.run.app/api/v1/users/analyze?user_id=achapon&week=pekan4",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"analyze"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "achapon"
+								},
+								{
+									"key": "week",
+									"value": "pekan4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAnalysis",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWNoYXBvbiIsImV4cCI6MTczMzY3NTMzNn0.43If90mW_mDO1flgeeBX7D3II9eJL9TXD3q9ij0Z_xQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://skinpal-api-989761954410.asia-southeast2.run.app/api/v1/users/analysis?user_id=achapon&week=pekan4",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"analysis"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "achapon"
+								},
+								{
+									"key": "week",
+									"value": "pekan4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Call All Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://skinpal-api-989761954410.asia-southeast2.run.app/api/v1/skincare",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"skincare"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/lenov/Downloads/WhatsApp Image 2024-12-04 at 10.46.10.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://skinpal-api-989761954410.asia-southeast2.run.app/api/v1/users/upload-profile?user_id=haidarjakiem",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"upload-profile"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "haidarjakiem"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWNoYXBvbiIsImV4cCI6MTczMzczNzExOX0.Ak3m6VZBf3Vy0j6lggPCa706_oKMGOesYBmoamfqMKY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://skinpal-api-989761954410.asia-southeast2.run.app/api/v1/users/profile?user_id=achapon",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "achapon"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://skinpal-api-989761954410.asia-southeast2.run.app/api/v1/skincare/count",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"skincare",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWNoYXBvbiIsImV4cCI6MTczMzM5NjA1Mn0.n5geaUpDHvgSZ3HZB-COVKau0pH4uni7COAMghqJXLM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ...",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/lenov/Downloads/WhatsApp Image 2024-12-04 at 10.42.53.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://skinpal-api-989761954410.asia-southeast2.run.app/api/v1/users/upload?user_id=achapon&week=pekan1",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"upload"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "achapon"
+								},
+								{
+									"key": "week",
+									"value": "pekan1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FINAL API (server) Copy",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"achapon\",\r\n    \"nama\": \"ponacha\",\r\n    \"email\": \"fathinacha@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://skinpal-api-backend-989761954410.asia-southeast2.run.app/api/v1/users/",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-backend-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n       \"user_id\": \"achapon\",\r\n       \"password\": \"12345678\"\r\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://skinpal-api-backend-989761954410.asia-southeast2.run.app/api/v1/users/login",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-backend-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "analyze",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWNoYXBvbiIsImV4cCI6MTczNDAwOTUwNn0.acD0i4kN3c1kWy_i43FozeHwBLWn5OkJVsZ1L8_oGxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiaGFpZGFyamFraWVtIiwiZXhwIjoxNzMzMzg0MjAzfQ.ZqDltzZIfcOfMaGpRTtcXp04iVsrHju4i_PYUjYXjVc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/lenov/Downloads/WhatsApp Image 2024-12-06 at 14.43.19.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://skinpal-api-backend-989761954410.asia-southeast2.run.app/api/v1/users/analyze?user_id=achapon&week=pekan4",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-backend-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"analyze"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "achapon"
+								},
+								{
+									"key": "week",
+									"value": "pekan4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAnalysis",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWNoYXBvbiIsImV4cCI6MTczMzY3NTMzNn0.43If90mW_mDO1flgeeBX7D3II9eJL9TXD3q9ij0Z_xQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://skinpal-api-backend-989761954410.asia-southeast2.run.app/api/v1/users/analysis?user_id=achapon&week=pekan4",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-backend-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"analysis"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "achapon"
+								},
+								{
+									"key": "week",
+									"value": "pekan4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Call All Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://skinpal-api-backend-989761954410.asia-southeast2.run.app/api/v1/skincare",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-backend-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"skincare"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/lenov/Downloads/WhatsApp Image 2024-12-04 at 10.46.10.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://skinpal-api-backend-989761954410.asia-southeast2.run.app/api/v1/users/upload-profile?user_id=haidarjakiem",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-backend-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"upload-profile"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "haidarjakiem"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://skinpal-api-backend-989761954410.asia-southeast2.run.app/api/v1/users/profile?user_id=achapon",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-backend-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "achapon"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "hhttps://skinpal-api-backend-989761954410.asia-southeast2.run.app/api/v1/skincare/count",
+							"protocol": "hhttps",
+							"host": [
+								"skinpal-api-backend-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"skincare",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWNoYXBvbiIsImV4cCI6MTczMzM5NjA1Mn0.n5geaUpDHvgSZ3HZB-COVKau0pH4uni7COAMghqJXLM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ...",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/lenov/Downloads/WhatsApp Image 2024-12-04 at 10.42.53.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://skinpal-api-backend-989761954410.asia-southeast2.run.app/api/v1/users/upload?user_id=achapon&week=pekan1",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-backend-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"upload"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "achapon"
+								},
+								{
+									"key": "week",
+									"value": "pekan1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FINAL API (Local)",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"achapon2\",\r\n    \"nama\": \"ponacha\",\r\n    \"email\": \"fathinacha@gmail.com\",\r\n    \"password\": \"87654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/users/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n       \"user_id\": \"achapon\",\r\n       \"password\": \"12345678\"\r\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "analyze",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWNoYXBvbiIsImV4cCI6MTczMzczNzExOX0.Ak3m6VZBf3Vy0j6lggPCa706_oKMGOesYBmoamfqMKY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiaGFpZGFyamFraWVtIiwiZXhwIjoxNzMzMzg0MjAzfQ.ZqDltzZIfcOfMaGpRTtcXp04iVsrHju4i_PYUjYXjVc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/lenov/Downloads/WhatsApp Image 2024-12-06 at 14.43.19.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/users/analyze?user_id=achapon&week=pekan4",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"analyze"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "achapon"
+								},
+								{
+									"key": "week",
+									"value": "pekan4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAnalysis",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWNoYXBvbiIsImV4cCI6MTczMzY4MDkyOX0.nIUCB3cmo9NXs84Vg1Axec0bqzGlsDaaEpqDZOeqNJA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/v1/users/analysis?user_id=achapon&week=pekan4",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"analysis"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "achapon"
+								},
+								{
+									"key": "week",
+									"value": "pekan4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Call All Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/skincare",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"skincare"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWNoYXBvbiIsImV4cCI6MTczMzczNzExOX0.Ak3m6VZBf3Vy0j6lggPCa706_oKMGOesYBmoamfqMKY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/lenov/Downloads/94c6dd49-0174-4e46-9d28-c9b966448bc9-image-0-1624852908122.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/users/upload-profile?user_id=achapon",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"upload-profile"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "achapon"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWNoYXBvbiIsImV4cCI6MTczMzczNzExOX0.Ak3m6VZBf3Vy0j6lggPCa706_oKMGOesYBmoamfqMKY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/users/profile?user_id=achapon",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "achapon"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "analyze Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWNoYXBvbiIsImV4cCI6MTczNDAwOTUwNn0.acD0i4kN3c1kWy_i43FozeHwBLWn5OkJVsZ1L8_oGxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiaGFpZGFyamFraWVtIiwiZXhwIjoxNzMzMzg0MjAzfQ.ZqDltzZIfcOfMaGpRTtcXp04iVsrHju4i_PYUjYXjVc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/lenov/Downloads/WhatsApp Image 2024-12-06 at 14.43.19.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://skinpal-api-backend-989761954410.asia-southeast2.run.app/api/v1/users/analyze?user_id=achapon&week=pekan4",
+							"protocol": "https",
+							"host": [
+								"skinpal-api-backend-989761954410",
+								"asia-southeast2",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"analyze"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "achapon"
+								},
+								{
+									"key": "week",
+									"value": "pekan4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/skincare/count",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"skincare",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiaGFpZGFyamFraWVtIiwiZXhwIjoxNzMzMzg0MjAzfQ.ZqDltzZIfcOfMaGpRTtcXp04iVsrHju4i_PYUjYXjVc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ...",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ASUS/Downloads/sin taehyoung.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/users/upload?user_id=haidarjakiem&week=pekan0",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"upload"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "haidarjakiem"
+								},
+								{
+									"key": "week",
+									"value": "pekan0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Import Database",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "File",
+							"type": "file",
+							"src": "/D:/UNS/SEM 5 (Bangkit 2024 CC)/Capstone/CC/Skinpal-API-py/database.csv",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/skincare/import-with-images",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"skincare",
+						"import-with-images"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
